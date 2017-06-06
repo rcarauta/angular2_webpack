@@ -1,8 +1,8 @@
 {
   "name": "unbstarter",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Starter from unb",
-  "main": "./app/entryPoints/main/index.js",
+  "main": "./src/main.ts",
   "author": "Renato Carauta Ribeiro",
   "license": "MIT",
   "devDependencies": {

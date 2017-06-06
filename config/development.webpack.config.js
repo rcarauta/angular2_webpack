@@ -4,7 +4,6 @@ var webpack = require('webpack');
 var htmlWebpackPlugin = require('html-webpack-plugin');
 var cleanWebpackPlugin = require('clean-webpack-plugin');
 var CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
-var ngcWebpack = require('ngc-webpack');
 var helper = require('./helper.js');
 
 module.exports = function(env) {
@@ -70,7 +69,11 @@ module.exports = function(env) {
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(env),
         'env': JSON.stringify(env)
-      })
+      }),
+      new webpack.ContextReplacementPlugin(
+         /angular(\\|\/)core(\\|\/)@angular/,
+        path.resolve(__dirname, '..','src')
+      )
     ],
     devServer: {
       contentBase: path.resolve(__dirname, '..', 'build-dev'),
