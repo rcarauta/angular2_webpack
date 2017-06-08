@@ -1,8 +1,9 @@
 var path = require('path');
+var webpackConfig = '';
 
 module.exports = function(env) {
-  const webpackConfigPath =
+  var webpackConfigPath =
     path.resolve(__dirname, 'config', `${env}.webpack.config.js`);
-  const webpackConfig = require(webpackConfigPath)(env);
+    webpackConfig = require(webpackConfigPath)(env);
   return webpackConfig;
 }

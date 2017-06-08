@@ -2,12 +2,14 @@
   "name": "unbstarter",
   "version": "1.0.0",
   "description": "Starter from unb",
-  "main": "./src/main.ts",
   "author": "Renato Carauta Ribeiro",
   "license": "MIT",
+  "types": "index.d.ts",
   "devDependencies": {
     "@angular/compiler-cli": "~4.0.3",
+    "@ngtools/webpack": "^1.4.0",
     "@types/node": "^6.0.57",
+    "angular2-router-loader": "^0.3.5",
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^3.1.3",
     "babel-core": "^6.22.1",
@@ -17,6 +19,7 @@
     "clean-webpack-plugin": "^0.1.15",
     "css-loader": "^0.26.1",
     "css-to-string-loader": "^0.1.3",
+    "dts-bundle": "^0.7.2",
     "eslint": "^3.12.2",
     "eslint-loader": "^1.6.1",
     "extract-text-webpack-plugin": "2.1.0",
@@ -33,7 +36,7 @@
     "style-loader": "^0.13.1",
     "to-string-loader": "^1.1.5",
     "ts-loader": "^1.3.3",
-    "typescript": "^2.1.4",
+    "typescript": "~2.2.2",
     "url-loader": "^0.5.7",
     "webpack": "2.2.1",
     "webpack-dev-server": "^1.16.2"
@@ -47,7 +50,9 @@
     "webpack:build-production": "webpack --env=production",
     "webpack:serve-production": "webpack-dev-server --env=production",
     "serve-local:production": "cd build-prod; http-server -p 8000 -o",
-    "serve-local:development": "cd build-dev; http-server -p 7000 -o"
+    "serve-local:development": "cd build-dev; http-server -p 7000 -o",
+    "webpack:build-library": "webpack --env=library",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@angular/animations": "~4.1.2",
